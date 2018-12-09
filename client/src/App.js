@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import StartToShow from './Containers/StartToShow/StartToShow';
+import Main from './Containers/Main/main.js';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <StartToShow/>
+      <div className="App" style={{height: '100%'}}>
+        <Main logo='../Pindell-logo.png'/>
       </div>
     );
   }
