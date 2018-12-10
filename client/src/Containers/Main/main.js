@@ -8,9 +8,11 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-      status: false
+      status: false,
+      continent: false,
     }
     this.logoOnClickButton = this.logoOnClickButton.bind(this);
+    this.continentOn = this.continentOn.bind(this);
   }
 
   logoOnClickButton() {
@@ -19,18 +21,30 @@ class Main extends Component {
     })
   }
 
+  continentOn() {
+    this.setState({
+      continent: true
+    })
+  }
+
   render() {
+    const start__button_event = this.state.status ? 'startButton_click' : 'main';
+    let continentComponent = <Continent />;
+
     return (
-      <div className="main__div main__div_onClick">
+      <div className="h-100">
         {this.state.status ? (
-          <Continent/>
+          <>
+            
+          </>
         ) : (
-            <div className='main'>
+            <div className={start__button_event}>
               <div className='logo fade-in'>
                 <img src={this.props.logo} alt="logo"/>
               </div>
-              <Button variant='outlined' className='startButton' onClick={this.logoOnClickButton}>GET START</Button>
+                <Button variant='outlined' className='startButton' onClick={this.logoOnClickButton}>GET START</Button>
             </div>
+
           )
         }
       </div>

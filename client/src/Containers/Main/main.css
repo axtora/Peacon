@@ -1,30 +1,11 @@
 html, body {
   height: 100%;
   overflow: hidden;
-  background-color: #FFBC42;
+  /* background-color: #FFBC42; */
 }
 
-.main__div {
-  background-color: white;
-  width: 100%;
-  height: 100%;
-}
-
-.main__div_onClick {
-  animation: spin 1s linear infinite;
-  -webkit-animation: spin 1s linear infinite;
-  -moz-animation: spin 1s linear infinite;
-  animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-  }
+.h-100 {
+  height: 100% !important;
 }
 
 .main {
@@ -37,8 +18,8 @@ html, body {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  width: auto;
-  height: auto;
+  width: 450px;
+  height: 261px;
 }
 
 .logo img {
@@ -46,7 +27,13 @@ html, body {
 }
 
 .startButton {
+  position: absolute !important;
+  transform: translate(-50%, -50%);
+  left: 49.3%;
+  top: 60%;
   opacity: 1;
+  border-radius: 7px !important;
+  border: 1px solid #495057 !important;
   animation-name: fadeInOpacity;
   animation-delay: 2.5s;
   animation-iteration-count: 1;
@@ -57,7 +44,7 @@ html, body {
 }
 
 .startButton span {
-  color: white;
+  color: #495057;
   letter-spacing: 0.5px;
   font-weight: bold;
 }
@@ -69,45 +56,22 @@ html, body {
   animation-duration: 애니메이션이 종료되고 다시 처음부터 시작할지 역방향으로 진행할지 지정합니다.
 */
 
-.logo__move_navbar {
-  opacity: 1;
-  animation-name: logo__move_navigationbar;
-  animation-delay: 1.5s;
-  animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -o-animation-iteration-count: 1;
-  animation-timing-function: ease-in;
+.startButton_click {
+  opacity: 0;
+  width: 100%;
+  animation: startButton_click 1s 0s 1 ease-in;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
-@keyframes logo__move_navigationbar {
+@keyframes startButton_click {
   0% {
-    top: 50%;
-    left: 50%;
-  }
-  100% {
-    top: 1%;
-    left: 1%;
-  }
-}
-
-.fade-in {
-  opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-delay: 0s;
-  animation-iteration-count: 1; 
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -o-animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
-}
-
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
+    height: 500px;
   }
   100% {
     opacity: 1;
+    bottom: 100%;
+    height: 100%;
   }
-} 
+}
