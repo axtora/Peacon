@@ -28,17 +28,14 @@ class Main extends Component {
   }
 
   render() {
-    const start__button_event = this.state.status ? 'startButton_click' : 'main';
-    let continentComponent = <Continent />;
-
     return (
       <div className="h-100">
         {this.state.status ? (
           <>
-            
+             <Continent />
           </>
         ) : (
-            <div className={start__button_event}>
+            <div className='main'>
               <div className='logo fade-in'>
                 <img src={this.props.logo} alt="logo"/>
               </div>
