@@ -1,42 +1,45 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import './continent.css';
-
-const styles = {
-  paper: {
-    height: 140,
-    width: 100,
-  },
-}
+import "./continent.css";
 
 class Continent extends Component {
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      continet: ["Asia", "Europe", "Africa", "America", "Oceania"],
+      hidden: true,
+    };
+    this.onMouseHover = this.onMouseHover.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+  }
+
+  onMouseHover() {
+    this.setState({
+      hidden: false,
+    })
+  }  
+
+  onMouseLeave() {
+    this.setState({
+      hidden: true,
+    })
+  }
+
+  render() { 
     return (
-      <Grid container spacing={16}>
-        <Grid item xs={12}>
-          <Grid container justify={"center"} spacing={16}>
-            {[0, 1, 2].map(value => (
-              <Grid key={value} item>
-                <Card>
-                  <CardContent>
-                    <Typography color="textSecondary">
-                      hi
-                    </Typography>
-                    <Typography color="textSecondary">
-                      oo
-                    </Typography>
-                    <Typography component="p">
-                      alla
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
+      <Grid container direction='row' justify='center' alignItems='center' className='h-100' id='main'>
+        {this.state.continet.map(item => (
+          <Card key={item} className={['card', item]}>
+            <CardContent>
+              <Typography align='center'>
+                {item}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
       </Grid>
     );
   }

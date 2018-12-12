@@ -31,15 +31,13 @@ class Main extends Component {
     return (
       <div className="h-100">
         {this.state.status ? (
-          <>
-             <Continent />
-          </>
+          <Continent />
         ) : (
             <div className='main'>
               <div className='logo fade-in'>
                 <img src={this.props.logo} alt="logo"/>
               </div>
-                <Button variant='outlined' className='startButton' onClick={this.logoOnClickButton}>GET START</Button>
+                <Button variant='outlined' className='startButton' onClick={this.logoOnClickButton}>Join</Button>
             </div>
 
           )
