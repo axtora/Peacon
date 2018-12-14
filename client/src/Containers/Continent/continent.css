@@ -9,27 +9,7 @@
   cursor: pointer;
 }
 
-.Asia:hover {
-  background: red;
-
-}
-
-.Europe:hover {
-  background: red;
-
-}
-
-.Africa:hover {
-  background: red;
-
-}
-
-.America:hover {
-  background: red;
-
-}
-
-.Oceania:hover {
-  background: red;
+.hoverEvent:hover {
+  background: rgba(0, 0, 0, 0.1);
 
 }

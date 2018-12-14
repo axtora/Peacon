@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import Asia from './Asia/asia.js';
+import Africa from './Africa/africa.js';
+import America from './America/america.js';
+import Europe from './Europe/europe.js';
+import Oceania from './Oceania/oceania.js';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -28,11 +33,12 @@ class Continent extends Component {
     })
   }
 
+
   render() { 
     return (
       <Grid container direction='row' justify='center' alignItems='center' className='h-100' id='main'>
         {this.state.continet.map(item => (
-          <Card key={item} className={['card', item]}>
+          <Card key={item} className='card hoverEvent' >
             <CardContent>
               <Typography align='center'>
                 {item}
