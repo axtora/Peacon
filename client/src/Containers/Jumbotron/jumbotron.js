@@ -5,11 +5,13 @@ class Jumbotron extends Component {
   render() {
     return (
       <div className="jumbotron">
+        <div className="jumbotron__background">
           <img src={this.props.imagePath} alt={this.props.alt} />
-          test
+        </div>
       </div>
     )
   }
 }
 
 export default Jumbotron;
+ 
