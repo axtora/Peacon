@@ -13,3 +13,15 @@
   cursor: pointer;
 }
 
+.jumbotron img:hover {
+  animation: imageHover 0.5s 0s 1 linear alternate;
+}
+
+@keyframes imageHover {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

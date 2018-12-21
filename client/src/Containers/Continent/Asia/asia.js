@@ -8,7 +8,7 @@ class Asia extends Component {
     return (
       <>
        <Navbar />
-       <Jumbotron imagePath={AsiaLogo} alt="Asia" />
+       <Jumbotron imagePath={AsiaLogo} alt="Asia" title="Asia"/>
       </>
     )
   }
