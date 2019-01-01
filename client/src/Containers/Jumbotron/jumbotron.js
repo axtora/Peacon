@@ -13,7 +13,7 @@ class Jumbotron extends Component {
     return (
       <div className="jumbotron">
         <div className="jumbotron__background">
-          <img src={this.props.imagePath} alt={this.props.alt} onMouseOver={ this.__MovePage()}/>
+          <img src={this.props.imagePath} alt={this.props.alt} onMouseOver={ this.__MovePage}/>
         </div>
       </div>
     )

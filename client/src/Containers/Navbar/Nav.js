@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './hamburgerMenu.css';
 import './nav.css';
 
 class Navbar extends Component {
@@ -21,12 +20,6 @@ class Navbar extends Component {
             </ul>
           </div>
           <div>
-            <div className="hamburgerMenu navbar__child">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
           </div>
       </nav>
     );

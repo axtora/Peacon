@@ -14,31 +14,26 @@ class Continent extends Component {
   constructor() {
     super();
     this.state = {
-      continet: ["Asia", "Europe", "Africa", "America", "Oceania"],
-      hidden: true,
+      continent: ["Asia", "Europe", "Africa", "America", "Oceania"],
+      Page: null,
     };
-    this.onMouseHover = this.onMouseHover.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.__ChangePage = this.__ChangePage.bind(this);
   }
 
-  onMouseHover() {
+  __ChangePage(continent) {
     this.setState({
-      hidden: false,
-    })
-  }  
-
-  onMouseLeave() {
-    this.setState({
-      hidden: true,
+      Page: continent.item,
     })
   }
-
 
   render() { 
+    let page = this.state.Page;
     return (
-      <Grid container direction='row' justify='center' alignItems='center' className='h-100' id='main'>
-        {this.state.continet.map(item => (
-          <Card key={item} className='card hoverEvent' >
+      <>
+        {this.state.Page === null ? (
+        <Grid container direction='row' justify='center' alignItems='center' className='h-100' id='main'>
+        {this.state.continent.map(item => (                                                                                                                               
+          <Card key={item} className='card hoverEvent' onClick={() => this.__ChangePage({item})}>
             <CardContent>
               <Typography align='center'>
                 {item}
@@ -47,6 +42,14 @@ class Continent extends Component {
           </Card>
         ))}
       </Grid>
+        ) : (
+          <>
+            {
+              page === 'Asia' ? <Asia /> : page === 'Europe' ? <Europe /> : page === 'Africa' ? <Africa /> : page === 'America' ? <America /> : page === 'Oceania' ? <Oceania /> : null
+            }
+          </>
+        )}
+      </>
     );
   }
 }

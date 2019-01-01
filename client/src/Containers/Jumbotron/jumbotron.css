@@ -9,11 +9,13 @@
 }
 
 .jumbotron img {
-  height: 800px;
+  width: 1000px;
+  height: 600px;
   cursor: pointer;
 }
 
-.jumbotron img:hover {
+
+/* .jumbotron img:hover {
   animation: imageHover 0.5s 0s 1 linear alternate;
 }
 
@@ -24,4 +26,4 @@
   100% {
     opacity: 0;
   }
-}
+} */

@@ -20,33 +20,11 @@ html, body {
   left: 50%;
   width: 450px;
   height: 261px;  
+  cursor: pointer;
 }
 
 .logo img {
   margin-bottom: 5em;
-}
-
-.startButton {
-  position: absolute !important;
-  transform: translate(-50%, -50%);
-  left: 49.3%;
-  top: 60%;
-  opacity: 1;
-  border-radius: 7px !important;
-  border: 1px solid #495057 !important;
-  animation-name: fadeInOpacity;
-  animation-delay: 2.5s;
-  animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -o-animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-}
-
-.startButton span {
-  color: #495057;
-  letter-spacing: 0.5px;
-  font-weight: bold;
 }
 
 /*

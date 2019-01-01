@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Continent from '../Continent/continent.js';
-import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
+import SignIn from '../Auth/SignIn';
+import { withStyles } from '@material-ui/core';
 import './main.css';
 
 
@@ -10,6 +13,7 @@ class Main extends Component {
     this.state = {
       status: false,
       continent: false,
+      open: true,
     }
     this.logoOnClickButton = this.logoOnClickButton.bind(this);
     this.continentOn = this.continentOn.bind(this);
@@ -27,24 +31,46 @@ class Main extends Component {
     })
   }
 
+  __handleOpen = () => {
+    this.setState({ open: true})
+  };
+
+  __handleClose = () => {
+    this.setState({ open: false })
+  }
+
   render() {
+    const { classes } = this.props;
     return (
       <div className="h-100">
         {this.state.status ? (
           <Continent />
         ) : (
-            <div className='main'>
-              <div className='logo fade-in'>
-                <img src={this.props.logo} alt="logo"/>
-              </div>
-                <Button variant='outlined' className='startButton' onClick={this.logoOnClickButton}>Join</Button>
+          <>
+          <Modal
+            aria-labelledby="test"
+            aria-describedby="test2"
+            open={this.state.open}
+            onClose={this.__handleClose}
+            disableBackdropClick="true"
+          >
+            <SignIn />
+          </Modal>
+          <div className='main'>
+            <div className='logo'>
+              <img src={this.props.logo} alt="logo" onClick={this.logoOnClickButton}/>
             </div>
-
+          </div>
+          </>
           )
         }
       </div>
     )
   }
+}
+
+Main.propTypes = {
+  classes: PropTypes.object.isRequired,
 }
 
 export default Main;
