@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Continent from '../Continent/continent.js';
-import Modal from '@material-ui/core/Modal';
-import SignIn from '../Auth/SignIn';
-import { withStyles } from '@material-ui/core';
 import './main.css';
-
 
 class Main extends Component {
   constructor() {
@@ -40,25 +35,15 @@ class Main extends Component {
   }
 
   render() {
-    const { classes } = this.props;
     return (
       <div className="h-100">
         {this.state.status ? (
           <Continent />
         ) : (
           <>
-          <Modal
-            aria-labelledby="test"
-            aria-describedby="test2"
-            open={this.state.open}
-            onClose={this.__handleClose}
-            disableBackdropClick="true"
-          >
-            <SignIn />
-          </Modal>
           <div className='main'>
             <div className='logo'>
-              <img src={this.props.logo} alt="logo" onClick={this.logoOnClickButton}/>
+              <img src="../../../Pindell-logo.png" alt="logo" onClick={this.logoOnClickButton}/>
             </div>
           </div>
           </>
@@ -67,10 +52,6 @@ class Main extends Component {
       </div>
     )
   }
-}
-
-Main.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default Main;

@@ -1,10 +1,39 @@
 .signin {
   background-color: white;
   position: absolute;
-  width: auto;
+  width: 350px;
   height: auto;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   padding: 50px;
+  border-radius: 10px;
 }
+
+.point__ {
+  
+}
+
+.signin__Header {
+  height: 150px;
+}
+
+.signin__logo {
+  position: relative;
+  bottom: 15%;
+  right: 10%;
+  width: 400px;
+  height: 232px;
+}
+
+.signin__Header img {
+  width: 400px;
+  height: 220px;
+}
+
+.signup {
+  color: black;
+  font-size: 12px;
+  float: right;
+}
+

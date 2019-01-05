@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
 import './Singin.css';
 
 const styles = theme => ({
@@ -15,11 +14,11 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: '400px'
+    width: '350px'
   },
   button: {
     margin: theme.spacing.unit,
-    width: '400px',
+    width: '350px',
     height: '50px'
   },
   dense: {
@@ -44,7 +43,13 @@ class Signin extends Component {
     const { classes } = this.props;
     return (
       <div className="signin">
-        <form noValidate autoComplete="off">
+        <div className="point__"/>
+        <div className="signin__Header">
+          <div className="signin__logo">
+            <img src="../../../Pindell-logo.png" alt="pindell"/>
+          </div>
+        </div>
+        <form noValidate autoComplete="off" action="auth/singin" method="GET"> 
           <div>
             <TextField
               id="outlined-name"
@@ -53,6 +58,7 @@ class Signin extends Component {
               value={this.state.name}
               onChange={this.__handleChange('name')}
               margin="normal"
+              type="email"
             />
           </div>
           <div>
@@ -66,7 +72,7 @@ class Signin extends Component {
             /> 
           </div> 
           <div className="subForm">
-            <a href="">계정이 없으신가요?</a>
+            <Link to="/auth/singup" className="signup">계정이 없으신가요?</Link>
           </div>
           <Button variant="outlined" className={classes.button}>
             로그인

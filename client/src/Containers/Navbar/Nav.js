@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './nav.css';
+import './Nav.css';
 
 class Navbar extends Component {
   hamburgerOnClick(e) {

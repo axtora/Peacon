@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import Main from './Containers/Main/main';
-import Signin from './Containers/Auth/SignIn';
-import Continent from './Containers/Continent/continent';
-import Asia from './Containers/Continent/Asia/asia';
+import SignIn from './Containers/Auth/SignIn';
+import SignUp from './Containers/Auth/SignUp';
 
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App" style={{height: '100%'}}>
-        <Main logo='../Pindell-logo.png'/>
-        {/* <Continent/> */}
-        {/* <Asia /> */}
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <Router>
+       <>
+        <Route path="/" exact component={Main}/>
+        <Route path="/auth/signin" component={SignIn} />
+        <Route path="/auth/signup" component={SignUp} />
+       </>
+    </Router>
+  )
 }
 
 export default App;
